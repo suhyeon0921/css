@@ -18,6 +18,7 @@ export default function MuiToDoPage() {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
+
   return (
     <>
       <span>ToDo List</span>
