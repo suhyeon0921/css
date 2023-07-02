@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import DeleteIcon from '@mui/icons-material/Delete';
+import styled from 'styled-components';
 import LottieFile from '../components/LottieFile';
 
 export default function StyledToDoPage() {
@@ -27,13 +27,15 @@ export default function StyledToDoPage() {
       <form onSubmit={addTodo}>
         <input
           value={input}
-          onChange={(event) => setInput(event.target.value)}
+          onChange={(event: {
+            target: { value: React.SetStateAction<string> };
+          }) => setInput(event.target.value)}
         />
         <button type='submit'>Add</button>
       </form>
       {todos.map((todo, index) => (
         <>
-          <span>{todo}</span>
+          <p>{todo}</p>
           <button onClick={() => deleteTodo(index)}>
             <DeleteIcon />
           </button>

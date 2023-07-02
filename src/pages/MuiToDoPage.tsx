@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
+import styled from 'styled-components';
+import LottieFile from '../components/LottieFile';
 
 export default function MuiToDoPage() {
   const [todos, setTodos] = useState<string[]>([]);
@@ -31,7 +33,7 @@ export default function MuiToDoPage() {
       </form>
       {todos.map((todo, index) => (
         <>
-          <span>{todo}</span>
+          <p>{todo}</p>
           <button onClick={() => deleteTodo(index)}>
             <DeleteIcon />
           </button>
