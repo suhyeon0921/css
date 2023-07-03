@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
+import {
+  Button,
+  TextField,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemSecondaryAction,
+  IconButton,
+} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import styled from 'styled-components';
+import { Box } from '@mui/system';
 import LottieFile from '../components/LottieFile';
+import styled from 'styled-components';
 
 export default function MuiToDoPage() {
   const [todos, setTodos] = useState<string[]>([]);
@@ -29,11 +39,11 @@ export default function MuiToDoPage() {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        <button>Add</button>
+        <button type='submit'>Add</button>
       </form>
       {todos.map((todo, index) => (
         <>
-          <p>{todo}</p>
+          <span>{todo}</span>
           <button onClick={() => deleteTodo(index)}>
             <DeleteIcon />
           </button>
